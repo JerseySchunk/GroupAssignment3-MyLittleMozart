@@ -6,7 +6,7 @@ import javax.sound.midi.ShortMessage;
 
 public class LegatoMidiEventFactory implements MidiEventFactory {
 
-	//variable to decrease tick by 80
+	//variable to increase tick by 80
 	private static final int duration = 80;
 	//Has MidiEvent for creating a note with noise and no noise
 	@Override
