@@ -1,6 +1,6 @@
 package mylittlemozart.factory;
 
-public interface MidiEventFactroyAbstract {
+public interface MidiEventFactoryAbstract {
 	//Makes factory
 	MidiEventFactory createFactory();
 }
