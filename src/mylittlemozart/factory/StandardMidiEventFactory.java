@@ -13,12 +13,12 @@ public class StandardMidiEventFactory implements MidiEventFactory {
 		on.setMessage(ShortMessage.NOTE_ON, channel, note, velocity);
 		return new MidiEvent(on, tick);
 	}
-
+	
 	@Override
 	public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
 		ShortMessage off = new ShortMessage();
 		off.setMessage(ShortMessage.NOTE_OFF, channel, note);
-		return new MidiEvent(off, 0);
+		return new MidiEvent(off, tick);
 	}
 	
 }
