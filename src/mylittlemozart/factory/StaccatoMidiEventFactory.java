@@ -20,7 +20,7 @@ public class StaccatoMidiEventFactory implements MidiEventFactory {
 	public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
 		ShortMessage off = new ShortMessage();
 		off.setMessage(ShortMessage.NOTE_OFF, channel, note);
-		return new MidiEvent(off, tick + duration);
+		return new MidiEvent(off, tick - duration);
 	}
 	
 }
