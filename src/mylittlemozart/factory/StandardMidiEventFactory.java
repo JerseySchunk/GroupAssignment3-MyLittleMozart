@@ -1,5 +1,24 @@
 package mylittlemozart.factory;
 
-public class StandardMidiEventFactory {
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiEvent;
+import javax.sound.midi.ShortMessage;
 
+public class StandardMidiEventFactory implements MidiEventFactory {
+//The parent class/factory that other factories can extend from
+	//Has MidiEvent for creating a note with noise and no noise
+	@Override
+	public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
+		ShortMessage on = new ShortMessage();
+		on.setMessage(ShortMessage.NOTE_ON, channel, note, velocity);
+		return new MidiEvent(on, tick);
+	}
+
+	@Override
+	public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
+		ShortMessage off = new ShortMessage();
+		off.setMessage(ShortMessage.NOTE_OFF, channel, note);
+		return new MidiEvent(off, 0);
+	}
+	
 }
