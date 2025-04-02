@@ -12,12 +12,12 @@ public class MidiCsvParser {
                 String[] values = line.split(",");
                 if (values.length == 6) {
                     try {
-                        int startEndTick = Integer.parseInt(values[0]);
-                        int velocity = Integer.parseInt(values[1]);
-                        int note = Integer.parseInt(values[2]);
-                        int channel = Integer.parseInt(values[3]);
-                        int instrument = Integer.parseInt(values[4]);
-                        int noteOnOff = Integer.parseInt(values[5]);
+                        int startEndTick = Integer.parseInt(values[0].trim());
+                        int velocity = Integer.parseInt(values[1].trim());
+                        int note = Integer.parseInt(values[2].trim());
+                        int channel = Integer.parseInt(values[3].trim());
+                        int instrument = Integer.parseInt(values[4].trim());
+                        int noteOnOff = Integer.parseInt(values[5].trim());
 
                         events.add(new MidiEventData(startEndTick, velocity, note, channel, instrument, noteOnOff));
                     } catch (NumberFormatException e) {
