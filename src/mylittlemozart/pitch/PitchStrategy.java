@@ -4,5 +4,5 @@ package mylittlemozart.pitch;
  * Allows for different ways to alter note pitch. Such as raising or lowering it by a number.
  */
 public interface PitchStrategy {	
-	int modifPitch(int note);
+	int modifyPitch(int note);
 }
