@@ -18,6 +18,13 @@ public class Main {
 			// Parses each line of that file and creates a list of MidiEventData objects from those lines
 			// Stores the objects in a List called midiEvents
 			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("filex/myster_song.csv");
+			
+			
+			//Creates a new MIDI sequence object and creates a new track inside of the sequence
+			Sequence sequence = new Sequence(Sequence.PPQ, 384);
+			Track track = sequence.createTrack();
+			
+			
 		}
 
 	}
