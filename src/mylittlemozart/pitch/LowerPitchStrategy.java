@@ -5,6 +5,12 @@ package mylittlemozart.pitch;
  */
 
 public class LowerPitchStrategy implements PitchStrategy {
+	/**
+	 * Subtracts 2 to the provided MIDI note value to raise its pitch.
+	 * 
+	 * @param note The original MIDI note value.
+	 * @return The raised MIDI note value.
+	 */
 	@Override
 	public int modifyPitch(int note) {
 		return note - 2;
