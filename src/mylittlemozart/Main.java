@@ -56,8 +56,26 @@ public class Main {
 					track.add(factory.createNoteOff(event.getStartEndTick(), modifiedNote, event.getChannel()));
 				}
 			}
+			//Gets a MIDI sequencer
+			//Opens the sequencer so it is ready to use
+			//Loads custom sequence
+			//Starts playing the MIDI sequence
+			Sequencer sequencer = MidiSystem.getSequencer();
+			sequencer.open();
+			sequencer.setSequence(sequence);
+			sequencer.start();
 			
-			ss
+			//Keeps the program alive in a loop while the sequence is playing.
+			//Checks every 100ms if the song is still going
+			while(sequencer.isRunning()) {
+				Thread.sleep(100);
+			}
+			
+			Thread.sleep(500);
+			sequencer.close();
+				
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 
 	}
