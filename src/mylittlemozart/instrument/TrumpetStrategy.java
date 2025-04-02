@@ -2,7 +2,18 @@ package mylittlemozart.instrument;
 
 import javax.sound.midi.*;
 
+/**
+ * Strategy to apply the Trumpet instrument to a given MIDI channel.
+ */
+
 public class TrumpetStrategy implements InstrumentStrategy {
+	
+	/**
+	 * Applies the Trumpet instrument to the specified MIDI channel
+	 * 
+	 * @param track   The MIDI track to modify.
+	 * @param channel The channel number to apply the instrument to.
+	 */
 	
 	@Override
 	public void applyInstrument(Track track, int channel) {
