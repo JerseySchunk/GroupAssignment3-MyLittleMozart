@@ -10,7 +10,10 @@ import javax.sound.midi.*;
 public class AcousticGrandPianoStrategy implements InstrumentStrategy {
 	
 	/**
-	 * Applies AcousticGrandPiano to a specified MIDI channel.
+     * Creates a PROGRAM_CHANGE MIDI message to assign a new instrument to the given channel.
+     * Uses MIDI instrument number 0, which represents an Acoustic Grand Piano.
+     * The message is wrapped in a MidiEvent scheduled at tick 0, ensuring it takes effect immediately.
+ 	 * Adds this event to the track so the channel plays using a piano sound.
 	 * 
 	 * @param track   The MIDI track to modify.
 	 * @param channel The channel number to apply the instrument to.
