@@ -24,6 +24,16 @@ public class Main {
 			Sequence sequence = new Sequence(Sequence.PPQ, 384);
 			Track track = sequence.createTrack();
 			
+			//Chooses how notes will behave by selecting a correct factory
+			//The selected factory will create MIDI events in the music sequence
+			MidiEventFactoryAbstract factoryAbstract = new StandardMidiEventFactoryAbstract();
+			MidiEventFactory factory = factoryAbstract.createFactory();
+			
+			//Applies AcousticGrandPiano to channel 0 of the track.
+			//Ensures notes played are of the AcousticGrandPiano
+			InstrumentStrategy instrumentStrategy = new AcousticGrandPianoStrategy();
+			instrumentStrategy.applyInstrument(track, 0);
+			
 			
 		}
 
