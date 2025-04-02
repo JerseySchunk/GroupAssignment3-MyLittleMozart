@@ -43,6 +43,21 @@ public class Main {
 			//Sets up pitch strategy to raise the notes pitch by 2 semitones
 			PitchStrategy pitchStrategy = new HigherPitchStrategy();
 			
+			//Loop through every MIDI event in the list midiEvents that was parsed from CSV file
+			//Apply pitch strategy to the note
+			//Checks the event type to see if the note should be played or stopped
+			//Uses the factory to create MIDI NoteOn or NoteOff event with the correct timing and adds the event to the track
+			for (MidiEventData event : midiEvents) {
+				int modifiedNote = pitchStrategy.modifyPitch(event.getNote());
+				
+				if(event.getNoteOnOff() == ShortMessage.NOTE_ON) {
+					track.add(factory.createNoteOn(event.getStartEndTick(), modifiedNote, event.getVelocity(), event.getChannel()));
+				}else {
+					track.add(factory.createNoteOff(event.getStartEndTick(), modifiedNote, event.getChannel()));
+				}
+			}
+			
+			ss
 		}
 
 	}
