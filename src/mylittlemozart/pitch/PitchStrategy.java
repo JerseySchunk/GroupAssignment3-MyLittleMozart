@@ -1,5 +1,5 @@
 package mylittlemozart.pitch;
 
-public interface PitchStrategy {
-
+public interface PitchStrategy {	
+	int modifPitch(int note);
 }
