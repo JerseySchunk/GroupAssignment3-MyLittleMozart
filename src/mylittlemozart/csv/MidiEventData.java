@@ -1,8 +1,26 @@
 package mylittlemozart.csv;
 
+/**
+ *MIDI event data. timing, velocity, note, channel, instrument, and note on/off state.
+ */
 public class MidiEventData {
-    private int startEndTick, velocity, note, channel, instrument, noteOnOff;
+    private int startEndTick; // tick which the event starts/ends
+    private int velocity; // velocity of the note
+    private int note; //  MIDI note number 
+    private int channel; // MIDI channel the event belongs to
+    private int instrument; //  instrument associated with the event
+    private int noteOnOff; // Indicates whether the note is on or off
 
+    /**
+     * Constructs a MidiEventData object with the given parameters.
+     * 
+     * @param startEndTick tick which the event starts/ends
+     * @param velocity velocity of the note
+     * @param note MIDI note number 
+     * @param channel MIDI channel the event belongs to
+     * @param instrument instrument associated with the event
+     * @param noteOnOff Indicates whether the note is on or off
+     */
     public MidiEventData(int startEndTick, int velocity, int note, int channel, int instrument, int noteOnOff) {
         this.startEndTick = startEndTick;
         this.velocity = velocity;
@@ -12,51 +30,93 @@ public class MidiEventData {
         this.noteOnOff = noteOnOff;
     }
 
-	public int getStartEndTick() {
-		return startEndTick;
-	}
+    /**
+     * @return tick at which event starts or ends
+     */
+    public int getStartEndTick() {
+        return startEndTick;
+    }
 
-	public void setStartEndTick(int startEndTick) {
-		this.startEndTick = startEndTick;
-	}
+    /**
+     * Sets  tick at which event starts or ends.
+     * @param startEndTick new tick value
+     */
+    public void setStartEndTick(int startEndTick) {
+        this.startEndTick = startEndTick;
+    }
 
-	public int getVelocity() {
-		return velocity;
-	}
+    /**
+     * @return velocity of the note
+     */
+    public int getVelocity() {
+        return velocity;
+    }
 
-	public void setVelocity(int velocity) {
-		this.velocity = velocity;
-	}
+    /**
+     * Sets velocity of the note.
+     * @param velocity The new velocity value
+     */
+    public void setVelocity(int velocity) {
+        this.velocity = velocity;
+    }
 
-	public int getNote() {
-		return note;
-	}
+    /**
+     * @return MIDI note number
+     */
+    public int getNote() {
+        return note;
+    }
 
-	public void setNote(int note) {
-		this.note = note;
-	}
+    /**
+     * Sets MIDI note number.
+     * @param note new note number
+     */
+    public void setNote(int note) {
+        this.note = note;
+    }
 
-	public int getChannel() {
-		return channel;
-	}
+    /**
+     * @return MIDI channel number
+     */
+    public int getChannel() {
+        return channel;
+    }
 
-	public void setChannel(int channel) {
-		this.channel = channel;
-	}
+    /**
+     * Sets MIDI channel number.
+     * @param channel new channel number
+     */
+    public void setChannel(int channel) {
+        this.channel = channel;
+    }
 
-	public int getInstrument() {
-		return instrument;
-	}
+    /**
+     * @return instrument number
+     */
+    public int getInstrument() {
+        return instrument;
+    }
 
-	public void setInstrument(int instrument) {
-		this.instrument = instrument;
-	}
+    /**
+     * Sets instrument number.
+     * @param instrument new instrument number
+     */
+    public void setInstrument(int instrument) {
+        this.instrument = instrument;
+    }
 
-	public int getNoteOnOff() {
-		return noteOnOff;
-	}
+    /**
+     * @return 1 if note is on, 0 if note is off
+     */
+    public int getNoteOnOff() {
+        return noteOnOff;
+    }
 
-	public void setNoteOnOff(int noteOnOff) {
-		this.noteOnOff = noteOnOff;
-	}
+    /**
+     * Sets whether note is on or off.
+     * @param noteOnOff 1 for note on, 0 for note off
+     */
+    public void setNoteOnOff(int noteOnOff) {
+        this.noteOnOff = noteOnOff;
+    }
 }
