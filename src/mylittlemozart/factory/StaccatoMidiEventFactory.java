@@ -3,7 +3,10 @@ package mylittlemozart.factory;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.ShortMessage;
-
+/**
+ * Is a concrete implementation of MidiEventFactory and implements the NoteOn and NoteOff Method.
+ * Has a tick variable to decrease the tick rate by 120
+ */
 public class StaccatoMidiEventFactory implements MidiEventFactory {
 
 	//variable to decrease tick by 120
